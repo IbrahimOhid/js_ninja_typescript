@@ -110,3 +110,21 @@ const nested: NestedInfo = {
         experience : 3
     }
 }
+
+
+// type mapping 💚💛💚
+
+type User = {
+    name: string,
+    age: number
+}
+
+type refUser = keyof User;
+
+const resultUser : refUser = "age";
+
+
+type UserName = {name: string, age: number};
+type PartialUser = Partial<UserName>;
+type ReadOnlyUser = Readonly<UserName>;
+type OmitUser = Omit<UserName, "name">;

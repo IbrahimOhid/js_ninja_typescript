@@ -51,3 +51,4 @@ const nested = {
         experience: 3
     }
 };
+const resultUser = "age";

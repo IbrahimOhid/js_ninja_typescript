@@ -31,7 +31,7 @@ let direction : 'up' | 'down' | 'left' | 'right';
 direction = 'left'
 console.log(direction);
 
-// object 💚💛💚
+// object with type alias 💚💛💚
 
 type UserInfo = {
     firstName: string,
@@ -55,3 +55,58 @@ const user : UserInfo = {
 }
 const result = user.fullName('uppercase');
 console.log(result);
+
+
+// object with interface 💚💛💚
+interface PersonInfo{
+    firstName: string,
+    lastName: string,
+    age: number,
+    fullName:(casing: string) => string
+}
+
+const person: PersonInfo = {
+    firstName : 'Mohammad',
+    lastName : 'Ibrahim',
+    age : 27,
+    fullName(casing){
+        if(casing){
+            const result = `I am ${this.firstName} ${this.lastName}`;
+            return result.toUpperCase();
+        }
+        return `I am ${this.firstName} ${this.lastName}`;
+    }
+}
+const results = person.fullName('person');
+console.log(results);
+
+// index signature 💚💛💚
+
+// type allUserInfo = {
+//     [key: string] : string | number | boolean;
+// }
+
+interface allUserInfo{
+    [key: string] : string | number | boolean;
+}
+
+const allUser: allUserInfo = {
+    userName : 'Rahim',
+    Id : 393,
+    isRealUser : true
+}
+
+// nested 💚💛💚
+
+type NestedInfo ={
+    [key: string] : {
+        [key: string] : string | number;
+    }
+}
+ 
+const nested: NestedInfo = {
+    allInfo:{
+        designation : 'Program Assistant',
+        experience : 3
+    }
+}

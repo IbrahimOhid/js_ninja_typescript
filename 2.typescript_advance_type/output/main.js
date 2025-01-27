@@ -26,3 +26,28 @@ const user = {
 };
 const result = user.fullName('uppercase');
 console.log(result);
+const person = {
+    firstName: 'Mohammad',
+    lastName: 'Ibrahim',
+    age: 27,
+    fullName(casing) {
+        if (casing) {
+            const result = `I am ${this.firstName} ${this.lastName}`;
+            return result.toUpperCase();
+        }
+        return `I am ${this.firstName} ${this.lastName}`;
+    }
+};
+const results = person.fullName('person');
+console.log(results);
+const allUser = {
+    userName: 'Rahim',
+    Id: 393,
+    isRealUser: true
+};
+const nested = {
+    allInfo: {
+        designation: 'Program Assistant',
+        experience: 3
+    }
+};

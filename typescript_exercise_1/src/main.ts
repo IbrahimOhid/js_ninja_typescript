@@ -18,7 +18,7 @@ calculateArea(5)
 // Exercise 3: Union Types ⤵
 
 
-function formatId(id: string | number): string {
+function formatId(id: string | number): string | number {
     //if id is string log the message `Your ID is: ${id.toUpperCase()}`
    //otherwise `Your ID is: ${id}`
   if( typeof id === 'string'){
@@ -44,6 +44,43 @@ enum Status{
     Pending = "pending",
   };
 console.log(Status.Active);  
+
+// Exercise 7: Type Assertions ⤵
+
+// let input = document.getElementById("user-input") as HTMLInputElement;
+let input = <HTMLInputElement> document.getElementById("user-input");
+input.value = "Hello, world!";
+
+// Exercise 8: keyof ⤵ 💖
+
+// function getProperty(obj, key) {
+//   return obj[key];
+// }
+
+// Exercise 9: Nested Objects ⤵
+
+type CompanyInfo ={
+  [key: string] : [
+    {
+      [key: string] : string | number;
+    },
+    {
+      [key: string] : string | number;
+    }
+  ]
+}
+
+let company : CompanyInfo = {
+  name: "Tech Corp",
+  employees: [
+    { name: "Alice", age: 30 },
+    { name: "Bob", age: 25 },
+  ],
+};
+
+
+
+
 
 
 

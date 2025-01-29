@@ -33,7 +33,7 @@ var Status;
 })(Status || (Status = {}));
 ;
 console.log(Status.Active);
-//   ⤵
+//   Exercise 7: Type Assertions⤵
 // let input = document.getElementById("user-input") as HTMLInputElement;
 let input = document.getElementById("user-input");
 input.value = "Hello, world!";
@@ -43,4 +43,9 @@ let company = {
         { name: "Alice", age: 30 },
         { name: "Bob", age: 25 },
     ],
+};
+let car = {
+    make: "Tesla",
+    model: "Model 3",
+    year: 2023,
 };

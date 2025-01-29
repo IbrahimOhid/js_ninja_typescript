@@ -45,13 +45,13 @@ enum Status{
   };
 console.log(Status.Active);  
 
-//   ⤵
+//   Exercise 7: Type Assertions⤵
 
 // let input = document.getElementById("user-input") as HTMLInputElement;
 let input = <HTMLInputElement> document.getElementById("user-input");
 input.value = "Hello, world!";
 
-// Exercise 8: keyof ⤵ 💖
+// Exercise 8: keyof ⤵ 
 
 // function getProperty(obj, key) {
 //   return obj[key];
@@ -77,6 +77,24 @@ let company : CompanyInfo = {
   ],
 };
 
+// Exercise 10: Function with Multiple Arguments ⤵
+
+// function addNumbers(...nums) {
+//   return nums.reduce((sum, num) => sum + num, 0);
+
+// Exercise 11: Interface for Object ⤵
+
+interface CarInfo{
+  make: string,
+  model: string,
+  year: number
+}
+
+let car = {
+  make: "Tesla",
+  model: "Model 3",
+  year: 2023,
+};
 
 
 

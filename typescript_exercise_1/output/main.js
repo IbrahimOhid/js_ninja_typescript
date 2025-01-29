@@ -33,8 +33,14 @@ var Status;
 })(Status || (Status = {}));
 ;
 console.log(Status.Active);
-// Exercise 7: Type Assertions ⤵
+//   ⤵
 // let input = document.getElementById("user-input") as HTMLInputElement;
 let input = document.getElementById("user-input");
 input.value = "Hello, world!";
-// Exercise 8: keyof ⤵
+let company = {
+    name: "Tech Corp",
+    employees: [
+        { name: "Alice", age: 30 },
+        { name: "Bob", age: 25 },
+    ],
+};

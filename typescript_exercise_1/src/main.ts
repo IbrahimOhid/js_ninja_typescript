@@ -53,9 +53,10 @@ input.value = "Hello, world!";
 
 // Exercise 8: keyof ⤵ 
 
-// function getProperty(obj, key) {
+// function getProperty(obj, key) : string | number {
 //   return obj[key];
 // }
+// getProperty({id: 2, userName: 'Ibrahim'}, ['karim'])
 
 // Exercise 9: Nested Objects ⤵
 
@@ -83,18 +84,149 @@ let company : CompanyInfo = {
 //   return nums.reduce((sum, num) => sum + num, 0);
 
 // Exercise 11: Interface for Object ⤵
-
 interface CarInfo{
   make: string,
   model: string,
   year: number
 }
 
-let car = {
+let car: CarInfo = {
   make: "Tesla",
   model: "Model 3",
   year: 2023,
 };
+
+// Exercise 12: Type Aliases ⤵
+
+type UserInfo = [{id: number, name: string}, {id: number, name: string}]
+
+let users : UserInfo = [
+  { id: 1, name: "Alice" },
+  { id: 2, name: "Bob" },
+];
+
+// Exercise 13: Intersection Types ⤵
+// Declare mutiple types and combine those , ultimate resulted type must satisfy the below object
+
+type UserFirstInfo = {
+  id: number, 
+  name: string,
+}
+
+type UserSecondInfo = {
+  department: string,
+  accessLevel: string
+}
+
+type userAllInfo = UserFirstInfo & UserSecondInfo;
+
+let manager: userAllInfo = {
+  id: 1,
+  name: "John Doe",
+  department: "Sales",
+  accessLevel: "Admin",
+};
+
+// Exercise 14: Optional Chaining ⤵
+
+type User = {
+  profile ?: {
+    name : string,
+    contact ?: {email: string}
+  }
+}
+
+let user : User= {
+  profile: {
+    name: "Alice",
+    contact: { email: "alice@example.com" },
+  },
+};
+console.log(user.profile?.contact?.email);
+
+// // Exercise 15: Nullable Types ⤵
+// function getUser(id) {
+//   if (id > 0) {
+//     return { id, name: "User" + id };
+//   }
+//   return null;
+// }
+
+
+// Exercise 16: Literal Types ⤵
+
+
+
+type Size = 'small' | 'medium' | 'large'
+function setSize(size: Size) {
+  if (size === "small" || size === "medium" || size === "large") {
+    console.log(`Size set to ${size}`);
+  }
+}
+setSize("large")
+setSize("small")
+setSize("medium")
+
+
+// Exercise 17: Mapped Types ⤵
+
+type mappedValue = {
+  isActive: boolean,
+  timeout: number,
+  apiKey: string
+}
+
+type Config = {
+  [prop in keyof mappedValue] : mappedValue[prop]
+}
+
+let config : Config = {
+  isActive: true,
+  timeout: 5000,
+  apiKey: "12345",
+};
+
+
+// Exercise 18: Readonly Properties ⤵
+
+type Settings = {
+  readonly theme: string,
+  fontSize: number
+}
+
+let settings : Settings = {
+  theme: "dark",
+  fontSize: 16,
+};
+settings.fontSize = 12
+//settings.theme = 'ddd' // error because it isa a read only property.
+
+// Exercise 19: Index Signatures
+
+interface Translations {
+  [key : string] : string
+}
+
+let translations : Translations = {
+  en: "Hello",
+  fr: "Bonjour",
+  es: "Hola",
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

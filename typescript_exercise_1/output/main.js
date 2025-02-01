@@ -1,5 +1,6 @@
 "use strict";
 // Exercise 1: Annotate Variables ⤵
+var _a, _b;
 let names = "Alice";
 let age = 30;
 let isEmployed = true;
@@ -48,4 +49,44 @@ let car = {
     make: "Tesla",
     model: "Model 3",
     year: 2023,
+};
+let users = [
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
+];
+let manager = {
+    id: 1,
+    name: "John Doe",
+    department: "Sales",
+    accessLevel: "Admin",
+};
+let user = {
+    profile: {
+        name: "Alice",
+        contact: { email: "alice@example.com" },
+    },
+};
+console.log((_b = (_a = user.profile) === null || _a === void 0 ? void 0 : _a.contact) === null || _b === void 0 ? void 0 : _b.email);
+function setSize(size) {
+    if (size === "small" || size === "medium" || size === "large") {
+        console.log(`Size set to ${size}`);
+    }
+}
+setSize("large");
+setSize("small");
+setSize("medium");
+let config = {
+    isActive: true,
+    timeout: 5000,
+    apiKey: "12345",
+};
+let settings = {
+    theme: "dark",
+    fontSize: 16,
+};
+settings.fontSize = 12;
+let translations = {
+    en: "Hello",
+    fr: "Bonjour",
+    es: "Hola",
 };

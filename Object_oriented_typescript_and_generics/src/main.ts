@@ -70,3 +70,23 @@ console.log(account);
 account.deposit(1001)
 account.withDraw(1000)
 console.log(account.getBalance());
+
+// => Abstraction 💛💛💛
+
+class Car{
+    private checkFuel(): void{
+        console.log('Check Fuel');
+    }
+    private checkSparkPlug(): void{
+        console.log('Check Spark Plug');
+    }
+
+    public readyToStart():void{
+        this.checkFuel();
+        this.checkSparkPlug();
+    }
+}
+
+const myCar = new Car()
+console.log(myCar);
+myCar.readyToStart();

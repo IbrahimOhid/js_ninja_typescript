@@ -67,3 +67,34 @@ class Car {
 const myCar = new Car();
 console.log(myCar);
 myCar.readyToStart();
+// => inheritance💛💛💛
+class Employee {
+    constructor(name, salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+    getEmployee() {
+        console.log(`Name: ${this.name}. Salary: ${this.salary}`);
+    }
+}
+class Manager extends Employee {
+    constructor(name, salary, department) {
+        super(name, salary);
+        this.department = department;
+    }
+}
+const NewEmployee = new Employee('Rahim', 20000);
+console.log(NewEmployee);
+const newManger = new Manager('Karim', 30000, 'HR');
+console.log(newManger);
+class Bike {
+    constructor(name, speed) {
+        this.name = name;
+        this.speed = speed;
+    }
+    drive() {
+        console.log(`Name: ${this.name}. Speed: ${this.speed}`);
+    }
+}
+const newBike = new Bike('Yamaha', 125);
+console.log(newBike);

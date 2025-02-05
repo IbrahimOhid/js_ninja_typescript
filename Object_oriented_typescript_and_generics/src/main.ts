@@ -90,3 +90,44 @@ class Car{
 const myCar = new Car()
 console.log(myCar);
 myCar.readyToStart();
+
+
+// => inheritance💛💛💛
+
+class Employee{
+    constructor(public name: string, public salary: number){}
+
+    getEmployee(): void{
+        console.log(`Name: ${this.name}. Salary: ${this.salary}`);
+    }  
+}
+
+class Manager extends Employee{
+    constructor(name: string, salary: number, public department: string){
+        super(name, salary)
+    }
+}
+
+const NewEmployee = new Employee('Rahim', 20000);
+console.log(NewEmployee);
+
+const newManger = new Manager('Karim', 30000, 'HR');
+console.log(newManger);
+
+
+interface Vehicle{
+    name: string,
+    speed:number,
+    drive:()=> void
+}
+
+class Bike implements Vehicle{
+    constructor(public name: string, public speed: number){}
+    
+    drive(){
+        console.log(`Name: ${this.name}. Speed: ${this.speed}`);
+    }
+}
+
+const newBike = new Bike('Yamaha', 125);
+console.log(newBike);
